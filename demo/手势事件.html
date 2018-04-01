@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>手势事件</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100%;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    window.onload = function () {
+       /* 绑定滑动事件
+        1.必须滑动过
+        2.滑动的距离超过50px
+        3.衍生出左滑动和右滑动
+        */
+        var startx =0;
+        var distancex =0;
+        var isMove = false;
+        var divBox = document.querySelector('div');
+        divBox.addEventListener('touchstart', function (e) {
+            startx = e.touches[0].clientX;
+        });
+        divBox.addEventListener('touchmove', function (e) {
+            var movex = e.touches[0].clientX;
+            distancex = movex - startx;
+            isMove = true;
+        });
+        divBox.addEventListener('touchend', function (e) {
+            if(isMove && Math.abs(distancex)>= 50){
+                if (distancex > 0){
+                    console.log('右滑动事件');
+                }else {
+                    console.log('左滑动事件');
+                }
+            }
+
+            startx =0;
+            distancex =0;
+            isMove = false;
+        });
+    }
+</script>
+</body>
+</html>

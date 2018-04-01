@@ -1,0 +1,270 @@
+/*版心容器*/
+.jd_container {
+    width: 100%;
+    /* 640 psd图 640px大小的设计稿 750px的设计稿
+       640px的设计稿是早期的设计稿的标准,标准参考设备（iPhone4），完美适配设备
+       750px的设计稿是现在的主流标准，参考设备（iPhone6）
+       基于设计稿，目的是不失真
+      320px 是保证网页的内容布局
+    */
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    height: 500px;
+    /*background-color: #f5f5f5;*/
+}
+
+/*顶部搜索*/
+.jd_search {
+    /*基于浏览器的宽高*/
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    /*background-color: red;*/
+}
+.jd_search .jd_search_box {
+    width: 100%;
+    height: 40px;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    background: rgba(216,80,92,0);
+    position: relative;
+}
+.jd_search .jd_search_box a{
+    position: absolute;
+    top: 0;
+}
+.jd_search .jd_search_box .icon_logo{
+    width: 60px;
+    height: 40px;
+    left: 5px;
+    /*解决图片失真问题 2倍图*/
+    background-position: 0px -103px;
+    margin-top: 3px;
+
+}
+.jd_search .jd_search_box .login{
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    right: 0;
+}
+.jd_search .jd_search_box form{
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 50px;
+}
+/*百分比是基于父元素的内容的宽度和高度*/
+.jd_search .jd_search_box form input{
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 5px;
+    padding-left: 40px;
+}
+.jd_search .jd_search_box .icon_search{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 80px;
+    top: 10px;
+    background-position: -60px -109px;
+}
+
+/*轮播图*/
+.jd_banner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.jd_banner ul:first-child {
+    width: 1000%;
+    -webkit-transform: translate(-10%);
+}
+.jd_banner ul:first-child li {
+    width: 10%;
+    float: left;
+}
+.jd_banner ul:first-child li a {
+    width: 100%;
+    display: block;
+}
+.jd_banner ul:first-child li a img {
+    width: 100%;
+    display: block;
+}
+.jd_banner ul:last-child {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -20px;
+    width: 60px;
+}
+.jd_banner ul:last-child li {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    float: left;
+    margin-left: 10px;
+}
+.jd_banner ul:last-child li.now {
+    background-color: #fff;
+}
+
+/*导航栏*/
+.jd_nav {
+    width: 100%;
+    background-color: #fff;
+}
+.jd_nav ul {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.jd_nav ul li {
+    width: 20%;
+    float: left;
+}
+.jd_nav ul li a {
+    display: block;
+    width: 100%;
+}
+.jd_nav ul li a img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+}
+.jd_nav ul li a p {
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/*商品区块*/
+.jd_product {
+    padding: 0 3px;
+}
+.jd_proBox {
+    margin-top: 10px;
+    box-shadow: 0 0 1px #d8d8d8;
+    background-color: #fff;
+    /*height: 200px;*/
+}
+.jd_proBox .pro_tit {
+    height: 34px;
+    line-height: 34px;
+    border-bottom: 1px solid #ddd;
+}
+.jd_proBox .pro_tit.nb {
+    border-bottom: none;
+}
+.jd_proBox .pro_tit h3 {
+    position: relative;
+    text-indent: 16px;
+    font-weight: normal;
+}
+.jd_proBox .pro_tit h3::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 11px;
+    width: 2px;
+    height: 14px;
+    background-color: #d4505c;
+}
+
+/*秒杀区块*/
+.sk_icon {
+    width: 16px;
+    height: 22px;
+    float: left;
+    margin: 7px;
+    /*解决背景图片的失真问题*/
+    background: url("../images/jd-sprites.png") no-repeat;
+    background-size: 200px 200px;
+    background-position: -85px -110px;
+}
+.sk_text {
+    color: #d4505c;
+    float: left;
+    margin-left: 10px;
+}
+.sk_time {
+    float: left;
+    margin-left: 10px;
+}
+.sk_time span {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+    background: #333;
+    margin-left: 3px;
+    float: left;
+    margin-top: 7px;
+}
+.sk_time span:nth-child(3n) {
+    background-color: #fff;
+    color: #333;
+    width: 3px;
+}
+/*秒杀的内容*/
+.sk_product {
+    width: 100%;
+}
+.sk_product li {
+    width: 33.3333%;
+    float: left;
+}
+.sk_product li a {
+    width: 100%;
+    display: block;
+    border-right: 1px solid #ccc;
+}
+.sk_product li:last-child a {
+    border-right: none;
+}
+.sk_product li a img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.sk_product li p {
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 0;
+}
+.sk_product li .now_price {
+    color: #d4505c;
+}
+.sk_product li .old_price {
+    color: #666;
+    text-decoration: line-through;
+}
+/*组合样式*/
+.w_p50 {
+    width: 50%;
+}
+.w_p50 img{
+    display: block;
+    width: 100%;
+}
+.b_left {
+    border-left: 1px solid #ddd;
+}
+.b_right {
+    border-right: 1px solid #ddd;
+}
+.b_bottom {
+    border-bottom: 1px solid #ddd;
+}

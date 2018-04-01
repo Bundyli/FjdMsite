@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>tap事件（轻触事件）</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100%;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    window.onload = function () {
+      var divBox = document.querySelector('div');
+//       divBox.addEventListener('click',function () {
+//            console.log('click');
+//       });
+//        300ms的延时
+
+        var startTime =0;
+        var isMove = false;
+       /*满足什么条件才认为是tap事件
+        1.比click事件响应快速 150ms以内
+        2.不能滑动
+        */
+//        1.记录开始触摸屏幕的时间
+       divBox.addEventListener('touchstart',function () {
+//           console.log('touchstart');
+//           console.time('time');
+           startTime = Date.now();
+       });
+       divBox.addEventListener('touchmove',function () {
+//           console.log('touchmove');
+           isMove = true;
+       });
+       divBox.addEventListener('touchend',function () {
+//           console.log('touchend');
+//           2.更新现在的时间，若< 150ms，则为tap时间
+//           console.timeEnd('time');
+           var endTime = Date.now();
+           console.log(endTime - startTime);
+           if(!isMove && (endTime - startTime) < 150){
+               console.log('tap');
+           }
+
+       });
+    }
+</script>
+</body>
+</html>

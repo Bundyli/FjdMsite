@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>touch事件</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+</body>
+<script>
+    var divBox = document.querySelector('div');
+//    手指刚刚触摸到屏幕的时候，触发的事件
+    divBox.addEventListener('touchstart', function (e) {
+       console.log(e);
+    });
+//手指在屏幕上滑动的时候，会不停的滑动
+    divBox.addEventListener('touchmove', function (e) {
+        console.log(e);
+    });
+
+    divBox.addEventListener('touchend', function (e) {
+        console.log(e);
+    });
+
+    
+</script>
+</html>
